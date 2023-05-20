@@ -1,0 +1,6 @@
+INSTALL_DIR=/opt/umbrel-backuper
+UMBREL_ROOT=/home/<user>/umbrel
+BACKUP_DIR=/mnt/disk2/backup
+SFTP="<backupuser>@<ip>:/home/backup/restic"
+APPS=("nextcloud" "vaultwarden")
+BACKUP_CRONTAB="0 3 * * *"
