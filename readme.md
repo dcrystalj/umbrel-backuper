@@ -5,11 +5,15 @@ This is useful if you want to keep some of your apps on default installation loc
 
 I like to keep my bitcoin/lnd related data and apps on the default location (because I have it on NVMe disk) and other apps which doesn't require that much performance I keep on slower external drive.
 
+## Architecture
+**Umbrel backuper** is just a glue tool to setup umbrel, data storage, [restic](https://restic.net/) and crontab to work together.
+![Architecture](img/arch.jpeg)
+
 ## Installation
 1. SSH into your Umbrel node
 2. Clone this repository
 3. Update the `variables` file to match your setup
-4. Update the `password` file with your restic repostiroy password (if repository is not setup yet just define something and it will be used to create the repository)
+4. Update the `password` file with your restic repository password (if repository is not setup yet just define something and it will be used to create the repository)
 5. Run `sudo ./install.sh`
 
 ## Test backup restoration

@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-source variables
+# read variables
+VARIABLES_FILE=$(dirname "$0")/variables
+source $VARIABLES_FILE
 
 for APP in "${APPS[@]}"; do
     $UMBREL_ROOT/scripts/app stop $APP

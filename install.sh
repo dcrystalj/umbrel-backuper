@@ -2,7 +2,9 @@
 
 set -euo pipefail
 
-source ./variables
+# read variables
+VARIABLES_FILE=$(dirname "$0")/variables
+source $VARIABLES_FILE
 
 # check if running as root
 if [ "$EUID" -ne 0 ]

@@ -1,6 +1,9 @@
 #!/bin/bash
 
-source variables
+# read variables
+VARIABLES_FILE=$(dirname "$0")/variables
+source $VARIABLES_FILE
+
 
 # idempotent operation
 for APP in "${APPS[@]}"; do
@@ -16,7 +19,7 @@ echo "Data folder replaced successfully"
 echo "Stopping umbrel"
 sudo $UMBREL_ROOT/scripts/stop
 
-if [[ $1 == "--restore" ]] then
+if [[ $1 == "--restore" ]]; then
   echo "Removing current data"
   for APP in "${APPS[@]}"; do
     rm -rf $UMBREL_ROOT/app-data/$APP/data
